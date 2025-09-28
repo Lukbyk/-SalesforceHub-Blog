@@ -14,10 +14,9 @@
             <nav id="main-menu">
                 <a href="/" class="logo">SalesforceHub</a>
                 <ul>
-                    <li><a href="/">Strona Główna</a></li>
-                    <li><a href="/artykuly/">Artykuły</a></li>
-                    <li><a href="/o-nas/">O nas</a></li>
-                    <li><a href="/dla-kogo/">Dla kogo</a></li> <!-- Zaktualizowany link -->
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/o-nas/">About us</a></li>
+                    <li><a href="/dla-kogo/">Who is this for?/a></li>
                 </ul>
             </nav>
         </div>
