@@ -17,21 +17,21 @@ layout: "base.njk"
 <div class="container">
     <div class="main-content">
         <section class="posts-section">
-            <h2>Najnowsze Artykuły</h2>
+            <h2>Latest Articles</h2>
             
             <div class="articles-grid">
                 <article class="post-card">
                     <a href="/artykuly/zarzadzanie-leadami/" class="post-link">
                         <div class="post-image-wrapper">
-                            <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Lead+Management" alt="Miniaturka artykułu o zarządzaniu leadami" class="post-thumbnail">
+                            <img src="https://via.placeholder.com/300x200/007bff/ffffff?text=Lead+Management" alt="Lead management article thumbnail" class="post-thumbnail">
                         </div>
                         <div class="post-content">
-                            <h3 class="post-title">Jak Efektywnie Zarządzać Leadami w Salesforce</h3>
+                            <h3 class="post-title">How to Effectively Manage Leads in Salesforce</h3>
                             <div class="post-meta">
-                                <span class="post-category">📊 Zarządzanie Leadami</span>
-                                <span class="post-date">28 grudnia 2024</span>
+                                <span class="post-category">📊 Lead Management</span>
+                                <span class="post-date">December 28, 2024</span>
                             </div>
-                            <p class="post-excerpt">Dowiedz się, jak zwiększyć konwersję i lepiej zorganizować proces sprzedaży dzięki najlepszym praktykom zarządzania leadami w Salesforce...</p>
+                            <p class="post-excerpt">Learn how to increase conversion and better organize your sales process with best practices for lead management in Salesforce...</p>
                         </div>
                     </a>
                 </article>
@@ -39,15 +39,15 @@ layout: "base.njk"
                 <article class="post-card">
                     <a href="/artykuly/optymalizacja-sprzedazy/" class="post-link">
                         <div class="post-image-wrapper">
-                            <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Sales+Optimization" alt="Miniaturka artykułu o optymalizacji sprzedaży" class="post-thumbnail">
+                            <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Sales+Optimization" alt="Sales optimization article thumbnail" class="post-thumbnail">
                         </div>
                         <div class="post-content">
-                            <h3 class="post-title">Optymalizacja Procesów Sprzedaży z Salesforce</h3>
+                            <h3 class="post-title">Optimizing Sales Processes with Salesforce</h3>
                             <div class="post-meta">
-                                <span class="post-category">🎯 Optymalizacja Sprzedaży</span>
-                                <span class="post-date">15 stycznia 2025</span>
+                                <span class="post-category">🎯 Sales Optimization</span>
+                                <span class="post-date">January 15, 2025</span>
                             </div>
-                            <p class="post-excerpt">Poznaj kluczowe strategie i narzędzia Salesforce, które pomogą Ci usprawnić procesy sprzedaży i osiągnąć lepsze wyniki...</p>
+                            <p class="post-excerpt">Discover key strategies and Salesforce tools that will help you streamline sales processes and achieve better results...</p>
                         </div>
                     </a>
                 </article>
@@ -55,10 +55,10 @@ layout: "base.njk"
         </section>
 
         <aside class="sidebar">
-            <h3>Kategorie Artykułów</h3>
+            <h3>Article Categories</h3>
             <ul class="categories">
-                <li><a href="#">📊 Zarządzanie Leadami</a></li>
-                <li><a href="#">🎯 Optymalizacja Sprzedaży</a></li>
+                <li><a href="#">📊 Lead Management</a></li>
+                <li><a href="#">🎯 Sales Optimization</a></li>
                 <li><a href="#">☁️ Cloud Computing</a></li>
             </ul>
         </aside>
