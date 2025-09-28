@@ -566,3 +566,48 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Grid layout dla artykułów - 3 kolumny */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Responsywność - na mniejszych ekranach */
+@media (max-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Zapewnienie równej wysokości kart */
+.post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.post-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-excerpt {
+    flex-grow: 1;
+}
