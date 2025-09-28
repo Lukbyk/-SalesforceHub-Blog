@@ -53,14 +53,5 @@ layout: "base.njk"
                 </article>
             </div>
         </section>
-
-        <aside class="sidebar">
-            <h3>Article Categories</h3>
-            <ul class="categories">
-                <li><a href="#">📊 Lead Management</a></li>
-                <li><a href="#">🎯 Sales Optimization</a></li>
-                <li><a href="#">☁️ Cloud Computing</a></li>
-            </ul>
-        </aside>
     </div>
 </div>
