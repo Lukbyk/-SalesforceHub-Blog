@@ -1,0 +1,5 @@
+# Folder wyjściowy generowany przez Eleventy
+_site
+
+# Zależności Node.js
+node_modules

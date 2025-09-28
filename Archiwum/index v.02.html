@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Hub - User Blog & Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: transparent;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 15px 50px 15px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .main-content {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px 30px 0 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .posts-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+        }
+
+        .post-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-content {
+            padding: 2rem;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #2d3748;
+            line-height: 1.4;
+        }
+
+        .post-meta {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .post-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.1);
+            height: fit-content;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .sidebar h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .categories {
+            list-style: none;
+        }
+
+        .categories li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .categories a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .categories a:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .sidebar-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: rgba(45, 55, 72, 0.95);
+            backdrop-filter: blur(20px);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        /* Page content styles */
+        .page-content {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px 30px 0 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 1;
+            min-height: 500px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.1);
+        }
+
+        .content-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .content-section h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        /* Hidden sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showHome()">Salesforce Hub</a>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="showHome()">Home</a></li>
+                        <li><a href="#" onclick="showPage('who-is-this-for')">Who is this for?</a></li>
+                        <li><a href="#" onclick="showPage('about')">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page-section active">
+        <section class="hero">
+            <div class="container">
+                <h1>Salesforce Hub</h1>
+                <p>Practical tips, advice, and best practices for Salesforce users</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search articles, tutorials..." id="searchInput">
+                    <button class="search-btn" onclick="searchPosts()">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <main class="container">
+            <div class="main-content">
+                <section class="posts-section">
+                    <h2>Latest Articles</h2>
+                    
+                    <article class="post-card">
+                        <div class="post-image">📊</div>
+                        <div class="post-content">
+                            <h3 class="post-title">How to Effectively Manage Leads in Salesforce</h3>
+                            <div class="post-meta">December 28, 2024</div>
+                            <p class="post-excerpt">Learn best practices for lead management that will help you increase conversion and better organize your sales process. Discover practical tips for lead qualification, follow-up strategies, and using Salesforce views effectively...</p>
+                            <a href="#" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">⚡</div>
+                        <div class="post-content">
+                            <h3 class="post-title">15 Salesforce Shortcuts Every User Should Know</h3>
+                            <div class="post-meta">December 26, 2024</div>
+                            <p class="post-excerpt">Save hours every week with these essential Salesforce keyboard shortcuts and navigation tricks. Perfect for sales reps, customer service agents, and managers who want to work more efficiently...</p>
+                            <a href="#" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">📈</div>
+                        <div class="post-content">
+                            <h3 class="post-title">Creating Custom Views That Actually Help Your Sales Process</h3>
+                            <div class="post-meta">December 24, 2024</div>
+                            <p class="post-excerpt">Stop drowning in endless lists! Learn how to create custom list views in Salesforce that help you focus on what matters most for your sales targets and customer relationships...</p>
+                            <a href="#" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">🎯</div>
+                        <div class="post-content">
+                            <h3 class="post-title">Mastering Opportunity Management for Better Forecasting</h3>
+                            <div class="post-meta">December 22, 2024</div>
+                            <p class="post-excerpt">Transform your sales forecasting with proper opportunity management. Learn how to set realistic close dates, manage stages effectively, and provide accurate pipeline reports to your managers...</p>
+                            <a href="#" class="read-more">Read more →</a>
+                        </div>
+                    </article>
+                </section>
+
+                <aside class="sidebar">
+                    <h3>Article Categories</h3>
+                    <ul class="categories">
+                        <li><a href="#">📊 Lead Management</a></li>
+                        <li><a href="#">🎯 Opportunity Tracking</a></li>
+                        <li><a href="#">📞 Customer Service</a></li>
+                        <li><a href="#">📈 Reports & Analytics</a></li>
+                        <li><a href="#">⚡ Productivity Tips</a></li>
+                        <li><a href="#">🎪 Marketing Tools</a></li>
+                    </ul>
+
+                    <div class="sidebar-section">
+                        <h3>Popular Tags</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                            <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500;">#Lightning</span>
+                            <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500;">#Views</span>
+                            <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500;">#Reports</span>
+                            <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500;">#Shortcuts</span>
+                            <span style="background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; font-weight: 500;">#Productivity</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- WHO IS THIS FOR PAGE -->
+    <div id="who-is-this-for-page" class="page-section">
+        <section class="hero">
+            <div class="container">
+                <h1>Who is this for?</h1>
+                <p>Understanding our audience and mission</p>
+            </div>
+        </section>
+
+        <main class="container">
+            <div class="page-content">
+                <div class="content-section">
+                    <div class="highlight-box">
+                        <h2>✅ This blog is designed for Salesforce end users</h2>
+                        <p>If you spend your days actually using Salesforce to get work done, this blog is for you!</p>
+                    </div>
+
+                    <h3>🎯 Perfect for these roles:</h3>
+                    <ul>
+                        <li><strong>Sales Representatives</strong> - Close more deals with better lead management and opportunity tracking</li>
+                        <li><strong>Customer Service Agents</strong> - Resolve cases faster and keep customers happy</li>
+                        <li><strong>Sales Managers</strong> - Get accurate forecasts and coach your team effectively</li>
+                        <li><strong>Product Owners</strong> - Track feature requests and customer feedback efficiently</li>
+                        <li><strong>Business Analysts</strong> - Create meaningful reports and find actionable insights</li>
+                        <li><strong>Marketing Professionals</strong> - Track campaigns and nurture leads through the funnel</li>
+                        <li><strong>Account Managers</strong> - Maintain strong customer relationships and identify upsell opportunities</li>
+                        <li><strong>Support Managers</strong> - Monitor team performance and customer satisfaction</li>
+                    </ul>
+
+                    <div class="highlight-box" style="border-left-color: #764ba2;">
+                        <h2>❌ This blog is NOT for:</h2>
+                        <ul>
+                            <li><strong>Developers</strong> - We don't cover coding, APIs, or custom development</li>
+                            <li><strong>System Administrators</strong> - No configuration guides or org setup tutorials</li>
+                            <li><strong>Technical Architects</strong> - We focus on using Salesforce, not building it</li>
+                        </ul>
+                        <p><em>You won't find technical implementation guides, code snippets, or admin configuration tutorials here.</em></p>
+                    </div>
+
+                    <h3>💡 What makes this different?</h3>
+                    <p>Most Salesforce content online is either too technical (for developers) or too basic (generic overviews). We focus on the middle ground - practical advice for people who use Salesforce every day to get their actual work done.</p>
+
+                    <h3>🎯 Our approach:</h3>
+                    <ul>
+                        <li><strong>Real scenarios</strong> - Tips based on actual day-to-day challenges</li>
+                        <li><strong>No jargon</strong> - Clear explanations without technical complexity</li>
+                        <li><strong>Actionable advice</strong> - Everything you read here, you can implement immediately</li>
+                        <li><strong>Role-specific content</strong> - Advice tailored to your specific job function</li>
+                    </ul>
+
+                    <p>Whether you're trying to hit your sales quota, improve your customer satisfaction scores, or just work more efficiently in Salesforce, you're in the right place!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page-section">
+        <section class="hero">
+            <div class="container">
+                <h1>About</h1>
+                <p>The story behind Salesforce Hub</p>
+            </div>
+        </section>
+
+        <main class="container">
+            <div class="page-content">
+                <div class="content-section">
+                    <h2>Welcome to Salesforce Hub</h2>
+                    <p>Salesforce Hub was created out of frustration with the gap between technical Salesforce documentation and the real needs of everyday users.</p>
+
+                    <h3>🎯 Our Mission</h3>
+                    <p>To provide practical, actionable advice for Salesforce end users who want to work smarter, not harder. We believe that with the right tips and techniques, everyone can become more productive and successful in their role.</p>
+
+                    <div class="highlight-box">
+                        <h3>💡 Why we started this blog</h3>
+                        <p>After years of working with sales teams, customer service departments, and business analysts, we noticed the same pattern: people were struggling with Salesforce not because it's complicated, but because they didn't know the practical tricks that make all the difference.</p>
+                    </div>
+
+                    <h3>📚 What you'll find here</h3>
+                    <ul>
+                        <li><strong>Productivity tips</strong> that save hours every week</li>
+                        <li><strong>Best practices</strong> from successful teams</li>
+                        <li><strong>Workflow improvements</strong> that make your job easier</li>
+                        <li><strong>Real examples</strong> from actual Salesforce users</li>
+                        <li><strong>Step-by-step guides</strong> you can follow immediately</li>
+                    </ul>
+
+                    <h3>🚀 Our philosophy</h3>
+                    <p>We believe that technology should work for you, not against you. Salesforce is incredibly powerful, but only if you know how to use it effectively. Our goal is to bridge that gap with clear, practical advice that you can implement today.</p>
+
+                    <h3>📬 Get in touch</h3>
+                    <p>Have a question about using Salesforce in your role? Want to suggest a topic for our next article? We'd love to hear from you!</p>
+                    <p>Email us at: <a href="mailto:contact@salesforcehub.com" style="color: #667eea; text-decoration: none; font-weight: 500;">contact@salesforcehub.com</a></p>
+
+                    <div class="highlight-box">
+                        <h3>🤝 Let's connect</h3>
+                        <p>Follow us on social media for daily Salesforce tips and updates:</p>
+                        <div style="margin-top: 1rem;">
+                            <a href="#" style="color: #667eea; text-decoration: none; margin-right: 1rem;">📘 LinkedIn</a>
+                            <a href="#" style="color: #667eea; text-decoration: none; margin-right: 1rem;">🐦 Twitter</a>
+                            <a href="#" style="color: #667eea; text-decoration: none;">📧 Newsletter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Salesforce Hub</h4>
+                    <p>Your practical guide to Salesforce success. Tips, tricks, and best practices for end users.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#" onclick="showHome()">Latest Articles</a>
+                    <a href="#" onclick="showPage('who-is-this-for')">Who is this for?</a>
+                    <a href="#" onclick="showPage('about')">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@salesforcehub.com">contact@salesforcehub.com</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Salesforce Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showHome() {
+            // Hide all page sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show home page
+            document.getElementById('home-page').classList.add('active');
+        }
+
+        function showPage(pageId) {
+            // Hide all page sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show requested page
+            document.getElementById(pageId + '-page').classList.add('active');
+        }
+
+        function searchPosts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const posts = document.querySelectorAll('.post-card');
+            
+            posts.forEach(post => {
+                const title = post.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchPosts();
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>

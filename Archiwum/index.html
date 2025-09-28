@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Hub - Blog i zasoby dla użytkowników</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Salesforce Hub</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Strona Główna</a></li>
+                        <li><a href="dla-kogo.html">Dla kogo jest ten blog?</a></li>
+                        <li><a href="o-nas.html">O nas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- === POCZĄTEK UNIKALNEJ TREŚCI: STRONA GŁÓWNA === -->
+        <section class="hero">
+            <div class="container">
+                <h1>Salesforce Hub</h1>
+                <p>Praktyczne porady, wskazówki i najlepsze praktyki dla użytkowników Salesforce</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Szukaj artykułów, poradników..." id="searchInput">
+                    <button class="search-btn" onclick="searchPosts()">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-content">
+                <section class="posts-section">
+                    <h2>Najnowsze Artykuły</h2>
+                    
+                    <article class="post-card">
+                        <div class="post-image">📊</div>
+                        <div class="post-content">
+                            <h3 class="post-title">Jak efektywnie zarządzać leadami w Salesforce</h3>
+                            <div class="post-meta">28 Grudnia, 2024</div>
+                            <p class="post-excerpt">Poznaj najlepsze praktyki zarządzania leadami, które pomogą Ci zwiększyć konwersję i lepiej zorganizować proces sprzedaży...</p>
+                            <a href="#" class="read-more">Czytaj więcej →</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">⚡</div>
+                        <div class="post-content">
+                            <h3 class="post-title">15 skrótów w Salesforce, które każdy użytkownik powinien znać</h3>
+                            <div class="post-meta">26 Grudnia, 2024</div>
+                            <p class="post-excerpt">Oszczędzaj godziny każdego tygodnia dzięki tym niezbędnym skrótom klawiszowym i trikom nawigacyjnym w Salesforce...</p>
+                            <a href="#" class="read-more">Czytaj więcej →</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-image">📈</div>
+                        <div class="post-content">
+                            <h3 class="post-title">Tworzenie niestandardowych widoków, które faktycznie pomagają</h3>
+                            <div class="post-meta">24 Grudnia, 2024</div>
+                            <p class="post-excerpt">Przestań tonąć w niekończących się listach! Naucz się tworzyć widoki, które pomogą Ci skupić się na tym, co najważniejsze...</p>
+                            <a href="#" class="read-more">Czytaj więcej →</a>
+                        </div>
+                    </article>
+                </section>
+
+                <aside class="sidebar">
+                    <h3>Kategorie Artykułów</h3>
+                    <ul class="categories">
+                        <li><a href="#">📊 Zarządzanie Leadami</a></li>
+                        <li><a href="#">🎯 Śledzenie Szans Sprzedaży</a></li>
+                        <li><a href="#">📞 Obsługa Klienta</a></li>
+                        <li><a href="#">📈 Raporty i Analityka</a></li>
+                        <li><a href="#">⚡ Porady Produktywności</a></li>
+                    </ul>
+
+                    <div class="sidebar-section">
+                        <h3>Popularne Tagi</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                            <a href="#" class="tag">#Lightning</a>
+                            <a href="#" class="tag">#Widoki</a>
+                            <a href="#" class="tag">#Raporty</a>
+                            <a href="#" class="tag">#Skróty</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <!-- === KONIEC UNIKALNEJ TREŚCI: STRONA GŁÓWNA === -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Salesforce Hub</h4>
+                    <p>Twój praktyczny przewodnik do sukcesu w Salesforce.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Szybkie Linki</h4>
+                    <a href="index.html">Najnowsze Artykuły</a>
+                    <a href="dla-kogo.html">Dla kogo?</a>
+                    <a href="o-nas.html">O nas</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <a href="mailto:contact@salesforcehub.com">contact@salesforcehub.com</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Salesforce Hub. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

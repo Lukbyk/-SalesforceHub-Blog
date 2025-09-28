@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Salesforce Hub</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Salesforce Hub</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dla-kogo/">Who is this for?</a></li>
+                        <li><a href="/o-nas/">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- {{ content | safe }} to specjalny znacznik Eleventy,
+             który wstawia tutaj treść z naszych plików .md -->
+        {{ content | safe }}
+    </main>
+
+    <footer>
+        <!-- Stopka bez zmian -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Salesforce Hub</h4>
+                    <p>Your practical guide to Salesforce success.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/">Latest Articles</a>
+                    <a href="/dla-kogo/">Who is this for?</a>
+                    <a href="/o-nas/">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@salesforcehub.com">contact@salesforcehub.com</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Salesforce Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
