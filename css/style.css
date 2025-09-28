@@ -104,3 +104,48 @@ nav a:hover {
 
 .search-bar input:focus {
     outl
+
+    /* === POPRAWKA GRIDU ARTYKUŁÓW === */
+.articles-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-bottom: 0 !important;
+}
+
+.articles-grid .post-card {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.articles-grid .post-link {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.articles-grid .post-content {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.articles-grid .post-excerpt {
+    flex-grow: 1 !important;
+}
+
+@media (max-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
