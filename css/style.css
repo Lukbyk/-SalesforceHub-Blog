@@ -384,7 +384,7 @@ footer {
     position: fixed; /* Sprawia, że element jest zawsze widoczny na ekranie */
     top: 0; /* Przykleja element do górnej krawędzi okna przeglądarki */
     width: 100%; /* Rozciąga element na całą szerokość ekranu */
-    background-color: #ffffff; /* Kolor tła nawigacji (możesz dostosować) */
+    background-color: #198daa; /* Kolor tła nawigacji (możesz dostosować) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Delikatny cień dla lepszej widoczności */
     z-index: 1000; /* Zapewnia, że nawigacja jest zawsze na wierzchu innych elementów */
     padding: 10px 0; /* Dodatkowy padding dla estetyki (możesz dostosować) */
