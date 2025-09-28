@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dla kogo? - SalesforceHub</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Upewnij się, że ścieżka do Twojego pliku CSS jest poprawna -->
+<link rel="stylesheet" href="../css/style.css"> <!-- Zmieniona ścieżka -->
+
 </head>
 <body>
 
