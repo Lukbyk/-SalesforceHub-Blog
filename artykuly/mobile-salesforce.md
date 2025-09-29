@@ -6,6 +6,7 @@ category: "📱 Mobile"
 excerpt: "Work efficiently on-the-go with mobile Salesforce features. Learn offline capabilities, mobile-specific workflows, and productivity tips."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Mobile+SF"
 tags: ["mobile", "productivity", "offline", "on-the-go"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

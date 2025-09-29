@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - Salesforce Hub</title>
+    <title>{{ title }} - Salesforce de-coded</title>
     <link rel="stylesheet" href="/css/style.css">
+    
+    {# Organization Schema - na wszystkich stronach #}
+    <script type="application/ld+json">
+{{ "" | organizationSchema | safe }}
+    </script>
+    
+    {# BlogPosting Schema - tylko na artykułach #}
+    {% if page.url and page.url != "/" and page.url.startsWith("/artykuly/") %}
+    <script type="application/ld+json">
+{{ page | blogPostingSchema | safe }}
+    </script>
+    
+    {# BreadcrumbList Schema - tylko na artykułach #}
+    <script type="application/ld+json">
+{{ page | breadcrumbSchema | safe }}
+    </script>
+    {% endif %}
 </head>
 <body>
 
     <header class="sticky-nav">
         <div class="container">
             <nav id="main-menu">
-                <a href="/" class="logo">Salesforce Hub</a>
+                <a href="/" class="logo">Salesforce de-coded</a>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/dla-kogo/">Who is this for?</a></li>
@@ -29,7 +46,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Salesforce Hub</h4>
+                    <h4>Salesforce de-coded</h4>
                     <p>Your practical guide to Salesforce success.</p>
                 </div>
                 <div class="footer-section">
@@ -40,10 +57,10 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <a href="mailto:contact@salesforcehub.com">contact@salesforcehub.com</a>
+                    <a href="mailto:contact@salesforcedecoded.com">contact@salesforcedecoded.com</a>
                 </div>
             </div>
-            <p>&copy; 2025 Salesforce Hub. All rights reserved.</p>
+            <p>&copy; 2025 Salesforce de-coded. All rights reserved.</p>
         </div>
     </footer>
 

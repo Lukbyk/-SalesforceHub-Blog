@@ -6,6 +6,7 @@ category: "🎯 Sales Optimization"
 excerpt: "Discover key strategies and Salesforce tools that will help you streamline sales processes and achieve better results..."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Sales+Optimization"
 tags: ["sales", "optimization", "process", "automation"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

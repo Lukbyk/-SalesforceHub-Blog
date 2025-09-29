@@ -1,13 +1,24 @@
 ---
 title: "How to Effectively Manage Leads in Salesforce"
 layout: "base.njk"
+date: 2024-12-28
+category: "📊 Lead Management"
+excerpt: "Learn best practices for lead management that will help you increase conversion and better organize your sales process with practical tips for lead qualification and follow-up strategies."
+image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Lead+Management"
+author: "Łukasz Byczkowski"
+tags: ["leads", "sales", "conversion", "best-practices"]
 ---
 
 <div class="container">
     <div class="page-content">
         <div class="content-section">
-            <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">How to Effectively Manage Leads in Salesforce</h1>
-            <p class="post-meta" style="margin-bottom: 2rem;">December 28, 2024</p>
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <a href="/">Home</a> › 
+                <span>{{ title }}</span>
+            </nav>
+            
+            <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
+            <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
             <h2>The Challenge of Lead Management</h2>
             <p>Learn best practices for lead management that will help you increase conversion and better organize your sales process. Discover practical tips for lead qualification, follow-up strategies, and using Salesforce views effectively.</p>

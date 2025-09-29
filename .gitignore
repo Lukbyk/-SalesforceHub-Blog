@@ -3,3 +3,5 @@ _site
 
 # Zależności Node.js
 node_modules
+# Local History (VS Code extension)
+.history

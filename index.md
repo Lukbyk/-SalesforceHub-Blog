@@ -1,11 +1,16 @@
 ---
 title: "Home"
 layout: "base.njk"
+pagination:
+  data: collections.articles
+  size: 9
+  alias: articles
+permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 <section class="hero">
     <div class="container">
-        <h1>Salesforce Hub</h1>
+        <h1>Salesforce de-coded</h1>
         <p>Practical tips, advice, and best practices for Salesforce users</p>
         <div class="search-bar">
             <input type="text" placeholder="Search articles, tutorials..." id="searchInput">
@@ -20,7 +25,7 @@ layout: "base.njk"
             <h2>Latest Articles</h2>
             
             <div class="articles-grid">
-                {%- for article in collections.articles -%}
+                {%- for article in articles -%}
                 <article class="post-card">
                     <a href="{{ article.url }}" class="post-link">
                         <div class="post-image-wrapper">
@@ -38,6 +43,33 @@ layout: "base.njk"
                 </article>
                 {%- endfor -%}
             </div>
+
+            {# Pagination Navigation #}
+            {%- if pagination.pages.length > 1 -%}
+            <nav class="pagination" aria-label="Pagination Navigation">
+                <ul class="pagination-list">
+                    {%- if pagination.previousPageHref -%}
+                    <li class="pagination-item">
+                        <a href="{{ pagination.previousPageHref }}" class="pagination-link">← Previous</a>
+                    </li>
+                    {%- endif -%}
+                    
+                    {%- for pageEntry in pagination.pages -%}
+                    <li class="pagination-item">
+                        <a href="{{ pagination.hrefs[loop.index0] }}" class="pagination-link {% if loop.index0 == pagination.pageNumber %}active{% endif %}">
+                            {{ loop.index }}
+                        </a>
+                    </li>
+                    {%- endfor -%}
+                    
+                    {%- if pagination.nextPageHref -%}
+                    <li class="pagination-item">
+                        <a href="{{ pagination.nextPageHref }}" class="pagination-link">Next →</a>
+                    </li>
+                    {%- endif -%}
+                </ul>
+            </nav>
+            {%- endif -%}
         </section>
     </div>
 </div>

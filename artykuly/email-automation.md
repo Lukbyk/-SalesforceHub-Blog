@@ -6,6 +6,7 @@ category: "📧 Automation"
 excerpt: "Automate your email campaigns and follow-up sequences to nurture leads more effectively and save time."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Email+Automation"
 tags: ["email", "automation", "campaigns", "nurturing"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

@@ -6,6 +6,7 @@ category: "🔗 Integrations"
 excerpt: "Connect Salesforce with your favorite tools for seamless workflow automation. Learn integration best practices and popular platforms."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Integrations"
 tags: ["integrations", "automation", "workflows", "tools"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

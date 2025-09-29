@@ -6,6 +6,7 @@ category: "💰 Opportunities"
 excerpt: "Track your sales opportunities more effectively with proven methods for stage management and forecasting accuracy."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Opportunities"
 tags: ["opportunities", "forecasting", "sales-process", "tracking"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

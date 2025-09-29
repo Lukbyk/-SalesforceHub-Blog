@@ -6,6 +6,7 @@ category: "📊 Reports"
 excerpt: "Master the basics of creating meaningful reports in Salesforce. Learn report types, filters, and visualization best practices."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Reports"
 tags: ["reports", "analytics", "data", "fundamentals"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">

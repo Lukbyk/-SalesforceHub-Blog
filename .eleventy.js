@@ -3,10 +3,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
 
+  // Ignoruj folder .history
+  eleventyConfig.ignores.add(".history/**");
+  eleventyConfig.ignores.add("artykuly/*.html");
+
   // Stwórz kolekcję artykułów
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByGlob("artykuly/*.md").sort((a, b) => {
-      // Sortuj od najnowszych do najstarszych
       return new Date(b.data.date) - new Date(a.data.date);
     });
   });
@@ -35,7 +38,120 @@ module.exports = function(eleventyConfig) {
       .replace(/^-+|-+$/g, '');
   });
 
-  // Ustawienia folderu
+  // Dodaj filtr do generowania JSON-LD dla BlogPosting Schema
+  eleventyConfig.addFilter("blogPostingSchema", (page, siteUrl = "https://salesforcedecoded.com") => {
+    if (!page || !page.url) {
+      return '';
+    }
+
+    if (page.url === "/" || !page.url.startsWith("/artykuly/")) {
+      return '';
+    }
+
+    const url = siteUrl + page.url;
+    const data = page.data || {};
+    const imageUrl = data.image || `${siteUrl}/images/default-og.jpg`;
+    
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": data.title || "Salesforce de-coded Article",
+      "description": data.excerpt || "",
+      "image": imageUrl,
+      "datePublished": page.date || data.date,
+      "dateModified": data.dateModified || page.date || data.date,
+      "author": {
+        "@type": "Person",
+        "name": data.author || "Łukasz Byczkowski",
+        "url": "https://www.linkedin.com/in/lukasz-byczkowski/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Salesforce de-coded",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/images/logo.png`
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": url
+      }
+    };
+    
+    return JSON.stringify(schema, null, 2);
+  });
+
+  // Dodaj filtr do generowania JSON-LD dla Organization Schema
+  eleventyConfig.addFilter("organizationSchema", (input) => {
+    const siteUrl = input || "https://salesforcedecoded.com";
+    
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Salesforce de-coded",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/images/logo.png`,
+        "width": "600",
+        "height": "60"
+      },
+      "description": "Practical tips, advice, and best practices for Salesforce end-users. Learn how to work smarter with Salesforce without technical complexity.",
+      "founder": {
+        "@type": "Person",
+        "name": "Łukasz Byczkowski",
+        "url": "https://www.linkedin.com/in/lukasz-byczkowski/"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/lukasz-byczkowski/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@salesforcedecoded.com",
+        "contactType": "Customer Support"
+      }
+    };
+    
+    return JSON.stringify(schema, null, 2);
+  });
+
+  // Dodaj filtr do generowania JSON-LD dla BreadcrumbList Schema
+  eleventyConfig.addFilter("breadcrumbSchema", (page, siteUrl = "https://salesforcedecoded.com") => {
+    if (!page || !page.url || page.url === "/") {
+      return '';
+    }
+
+    const breadcrumbs = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
+      }
+    ];
+
+    if (page.url.startsWith("/artykuly/")) {
+      const data = page.data || {};
+      if (data.title) {
+        breadcrumbs.push({
+          "@type": "ListItem",
+          "position": 2,
+          "name": data.title,
+          "item": siteUrl + page.url
+        });
+      }
+    }
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs
+    };
+
+    return JSON.stringify(schema, null, 2);
+  });
+
   return {
     dir: {
       input: ".", 

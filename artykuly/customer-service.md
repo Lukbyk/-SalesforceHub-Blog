@@ -6,6 +6,7 @@ category: "🎧 Service"
 excerpt: "Improve customer satisfaction with Service Cloud optimization. Learn case management, knowledge base setup, and agent productivity tips."
 image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Customer+Service"
 tags: ["service-cloud", "customer-service", "case-management", "support"]
+author: "Łukasz Byczkowski"
 ---
 
 <div class="container">
