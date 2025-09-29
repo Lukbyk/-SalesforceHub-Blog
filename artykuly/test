@@ -1,0 +1,21 @@
+---
+title: "Twój tytuł artykułu"
+layout: "base.njk"
+date: 2025-01-15
+category: "📊 Twoja Kategoria"
+excerpt: "Krótki opis artykułu..."
+image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Obrazek"
+tags: ["tag1", "tag2"]
+---
+
+<div class="container">
+    <div class="page-content">
+        <div class="content-section">
+            <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
+            <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
+            
+            <h2>Twój nagłówek</h2>
+            <p>Twoja treść...</p>
+        </div>
+    </div>
+</div>
