@@ -10,11 +10,10 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
 
 <section class="hero">
     <div class="container">
-        <h1>Salesforce de-coded</h1>
-        <p>Practical tips, advice, and best practices for Salesforce users</p>
-        <div class="search-bar">
-            <input type="text" placeholder="Search articles, tutorials..." id="searchInput">
-            <button class="search-btn" onclick="searchPosts()">🔍</button>
+        <div class="hero-content">
+            <h1>Simplifying the Cloud for non-tech users</h1>
+            <p>Practical Salesforce tips without the technical jargon</p>
+            <a href="{{ collections.articles[0].url }}" class="cta-button">Read Latest Post</a>
         </div>
     </div>
 </section>
