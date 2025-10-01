@@ -1,9 +1,10 @@
 module.exports = function(eleventyConfig) {
-  // Przekopiuj foldery css i js do folderu _site
+  // Przekopiuj foldery css, js i images do folderu _site
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("images");
 
-  // Ignoruj folder .history
+  // Ignoruj folder .history i pliki HTML w artykułach
   eleventyConfig.ignores.add(".history/**");
   eleventyConfig.ignores.add("artykuly/*.html");
 

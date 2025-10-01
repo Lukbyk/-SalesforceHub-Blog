@@ -1,17 +1,19 @@
 ---
 title: "Advanced Opportunity Tracking Techniques"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-18
 category: "💰 Opportunities"
 excerpt: "Track your sales opportunities more effectively with proven methods for stage management and forecasting accuracy."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Opportunities"
+image: "/images/lead-management.jpg"
 tags: ["opportunities", "forecasting", "sales-process", "tracking"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
+
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +40,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Set up alerts for opportunities that haven't been updated in 14+ days. Stale opportunities hurt forecast accuracy and may indicate deals that need attention.</p>
             </div>
-        </div>
-    </div>
-</div>
+

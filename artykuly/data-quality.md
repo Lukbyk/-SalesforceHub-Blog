@@ -1,17 +1,19 @@
 ---
 title: "Maintaining Data Quality in Salesforce"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-12
 category: "🗄️ Data Management"
 excerpt: "Keep your Salesforce data clean and reliable with proven strategies for validation rules, duplicate prevention, and data governance."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Data+Quality"
+image: "/images/lead-management.jpg"
 tags: ["data-quality", "validation", "duplicates", "governance"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
+
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +40,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Use Data Loader or similar tools to bulk update common data issues. Don't try to fix everything manually - automation is your friend.</p>
             </div>
-        </div>
-    </div>
-</div>
+

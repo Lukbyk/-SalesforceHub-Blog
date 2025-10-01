@@ -1,17 +1,19 @@
 ---
 title: "Maximizing Salesforce Mobile App Usage"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-10
 category: "📱 Mobile"
 excerpt: "Work efficiently on-the-go with mobile Salesforce features. Learn offline capabilities, mobile-specific workflows, and productivity tips."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Mobile+SF"
+image: "/images/lead-management.jpg"
 tags: ["mobile", "productivity", "offline", "on-the-go"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
+
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +40,3 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Use the mobile app's integration with your phone's calendar and contacts. Salesforce can automatically suggest records when you receive calls from known contacts.</p>
             </div>
-        </div>
-    </div>
-</div>

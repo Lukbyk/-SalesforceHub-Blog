@@ -1,17 +1,19 @@
 ---
 title: "Optimizing Sales Processes with Salesforce"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-25
 category: "🎯 Sales Optimization"
 excerpt: "Discover key strategies and Salesforce tools that will help you streamline sales processes and achieve better results..."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Sales+Optimization"
+image: "/images/lead_management_3_2.png"
 tags: ["sales", "optimization", "process", "automation"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
+
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +40,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Review your sales process quarterly with your team. What worked? What didn't? Continuous improvement is key to maintaining an optimized sales machine.</p>
             </div>
-        </div>
-    </div>
-</div>
+

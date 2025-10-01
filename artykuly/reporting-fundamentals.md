@@ -1,17 +1,18 @@
 ---
 title: "Salesforce Reporting Fundamentals"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-05
 category: "📊 Reports"
 excerpt: "Master the basics of creating meaningful reports in Salesforce. Learn report types, filters, and visualization best practices."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Reports"
+image: "/images/lead-management.jpg"
 tags: ["reports", "analytics", "data", "fundamentals"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +39,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Before creating a new report, check if someone else has already built something similar. Reuse and modify existing reports instead of starting from scratch every time.</p>
             </div>
-        </div>
-    </div>
-</div>
+

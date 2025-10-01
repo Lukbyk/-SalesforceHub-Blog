@@ -1,21 +1,20 @@
 ---
 title: "How to Effectively Manage Leads in Salesforce"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-28
 category: "📊 Lead Management"
 excerpt: "Learn best practices for lead management that will help you increase conversion and better organize your sales process with practical tips for lead qualification and follow-up strategies."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Lead+Management"
+image: "/images/lead-management.jpg"
 author: "Łukasz Byczkowski"
 tags: ["leads", "sales", "conversion", "best-practices"]
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
-            <nav aria-label="Breadcrumb" class="breadcrumb">
-                <a href="/">Home</a> › 
-                <span>{{ title }}</span>
-            </nav>
+
+
             
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
@@ -52,6 +51,4 @@ tags: ["leads", "sales", "conversion", "best-practices"]
                 <h3>💡 Pro Tip</h3>
                 <p>Review your lead conversion rates monthly and adjust your qualification criteria based on what actually converts to customers.</p>
             </div>
-        </div>
-    </div>
-</div>
+ 

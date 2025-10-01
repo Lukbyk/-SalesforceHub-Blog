@@ -1,17 +1,19 @@
 ---
 title: "Essential Salesforce Integration Tips"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-08
 category: "🔗 Integrations"
 excerpt: "Connect Salesforce with your favorite tools for seamless workflow automation. Learn integration best practices and popular platforms."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Integrations"
+image: "/images/lead-management.jpg"
 tags: ["integrations", "automation", "workflows", "tools"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
-        <div class="content-section">
+
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
             
@@ -38,6 +40,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Start small with integrations. Pick one workflow that causes the most manual work and automate that first. Success with small integrations builds confidence for bigger projects.</p>
             </div>
-        </div>
-    </div>
-</div>
+

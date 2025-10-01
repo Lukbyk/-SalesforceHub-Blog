@@ -1,16 +1,19 @@
 ---
 title: "Mastering Email Automation in Salesforce"
-layout: "base.njk"
+layout: "article-layout.njk"
 date: 2024-12-20
 category: "📧 Automation"
 excerpt: "Automate your email campaigns and follow-up sequences to nurture leads more effectively and save time."
-image: "https://via.placeholder.com/300x200/3498DB/ffffff?text=Email+Automation"
+image: "/images/lead-management.jpg"
 tags: ["email", "automation", "campaigns", "nurturing"]
 author: "Łukasz Byczkowski"
+relatedArticles:
+  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/opportunity-tracking/"
+  - "/artykuly/email-automation/"
 ---
 
-<div class="container">
-    <div class="page-content">
+
         <div class="content-section">
             <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ title }}</h1>
             <p class="post-meta" style="margin-bottom: 2rem;">{{ date | readableDate }}</p>
@@ -38,6 +41,4 @@ author: "Łukasz Byczkowski"
                 <h3>💡 Pro Tip</h3>
                 <p>Set up automation rules to stop sending emails if someone becomes a customer or requests to be removed from campaigns. Nothing kills credibility like irrelevant emails.</p>
             </div>
-        </div>
-    </div>
-</div>
+
