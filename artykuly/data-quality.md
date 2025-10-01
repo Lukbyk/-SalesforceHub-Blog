@@ -4,7 +4,7 @@ layout: "article-layout.njk"
 date: 2024-12-12
 category: "🗄️ Data Management"
 excerpt: "Keep your Salesforce data clean and reliable with proven strategies for validation rules, duplicate prevention, and data governance."
-image: "/images/lead-management.jpg"
+image: "/images/data-quality.jpg"
 tags: ["data-quality", "validation", "duplicates", "governance"]
 author: "Łukasz Byczkowski"
 relatedArticles:

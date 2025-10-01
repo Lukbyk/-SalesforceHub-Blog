@@ -4,7 +4,7 @@ layout: "article-layout.njk"
 date: 2024-12-15
 category: "🎧 Service"
 excerpt: "Improve customer satisfaction with Service Cloud optimization. Learn case management, knowledge base setup, and agent productivity tips."
-image: "/images/lead_management_4_3.png"
+image: "/images/customer-service.jpg"
 tags: ["service-cloud", "customer-service", "case-management", "support"]
 author: "Łukasz Byczkowski"
 relatedArticles:

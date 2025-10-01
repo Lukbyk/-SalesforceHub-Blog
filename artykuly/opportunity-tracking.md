@@ -4,7 +4,7 @@ layout: "article-layout.njk"
 date: 2024-12-18
 category: "💰 Opportunities"
 excerpt: "Track your sales opportunities more effectively with proven methods for stage management and forecasting accuracy."
-image: "/images/lead-management.jpg"
+image: "/images/opportunity-tracking.jpg"
 tags: ["opportunities", "forecasting", "sales-process", "tracking"]
 author: "Łukasz Byczkowski"
 relatedArticles:

@@ -4,7 +4,7 @@ layout: "article-layout.njk"
 date: 2024-12-25
 category: "🎯 Sales Optimization"
 excerpt: "Discover key strategies and Salesforce tools that will help you streamline sales processes and achieve better results..."
-image: "/images/lead_management_3_2.png"
+image: "/images/sales-optimization.jpg"
 tags: ["sales", "optimization", "process", "automation"]
 author: "Łukasz Byczkowski"
 relatedArticles:

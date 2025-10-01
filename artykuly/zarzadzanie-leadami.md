@@ -4,13 +4,13 @@ layout: "article-layout.njk"
 date: 2024-12-28
 category: "📊 Lead Management"
 excerpt: "Learn best practices for lead management that will help you increase conversion and better organize your sales process with practical tips for lead qualification and follow-up strategies."
-image: "/images/lead-management.jpg"
+image: "/images/zarzadzanie-leadami.jpg"
 author: "Łukasz Byczkowski"
 tags: ["leads", "sales", "conversion", "best-practices"]
 relatedArticles:
-  - "/artykuly/zarzadzanie-leadami/"
+  - "/artykuly/sales-optimization/"
   - "/artykuly/opportunity-tracking/"
-  - "/artykuly/email-automation/"
+  
 ---
 
 
