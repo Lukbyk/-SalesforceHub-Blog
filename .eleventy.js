@@ -8,11 +8,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add(".history/**");
   eleventyConfig.ignores.add("artykuly/*.html");
 
-  // Stwórz kolekcję artykułów
+  // Stwórz kolekcję artykułów (IGNORUJ PLIKI ZACZYNAJĄCE SIĘ OD _ lub __)
   eleventyConfig.addCollection("articles", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("artykuly/*.md").sort((a, b) => {
-      return new Date(b.data.date) - new Date(a.data.date);
-    });
+    return collectionApi.getFilteredByGlob("artykuly/*.md")
+      .filter(item => {
+        // Ignoruj drafty
+        if (item.data.draft) return false;
+        
+        // Ignoruj pliki zaczynające się od _ lub __
+        const filename = item.inputPath.split('/').pop();
+        if (filename.startsWith('_')) return false;
+        
+        return true;
+      })
+      .sort((a, b) => {
+        return new Date(b.data.date) - new Date(a.data.date);
+      });
   });
 
   // Dodaj filtr do formatowania daty

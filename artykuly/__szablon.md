@@ -13,28 +13,27 @@ relatedArticles:
   - "/artykuly/email-automation/"
 ---
 
-<nav aria-label="Breadcrumb" class="breadcrumb">
-    <a href="/">Home</a> / 
-    <span>{{ title }}</span>
-</nav>
+## Główny problem
 
-<h1 class="post-title">{{ title }}</h1>
-<p class="post-meta">{{ date | readableDate }}</p>
-
-<h2>Główny problem</h2>
-<p>Wprowadzenie...</p>
+Wprowadzenie do artykułu...
 
 <div class="highlight-box">
-    <p><strong>Kluczowa wskazówka:</strong> ...</p>
+    <p><strong>Kluczowa wskazówka:</strong> Ważna informacja dla czytelnika</p>
 </div>
 
-<h3>1. Pierwszy punkt</h3>
-<p>Treść...</p>
+### 1. Pierwszy punkt
 
-<h3>2. Drugi punkt</h3>
-<p>Treść...</p>
+Treść pierwszego punktu. Wyjaśnij szczegółowo problem i rozwiązanie.
+
+### 2. Drugi punkt
+
+Treść drugiego punktu. Dodaj przykłady i praktyczne wskazówki.
+
+### 3. Trzeci punkt
+
+Kolejny ważny aspekt tematu.
 
 <div class="highlight-box">
     <h3>💡 Pro Tip</h3>
-    <p>Dodatkowa wskazówka na koniec...</p>
+    <p>Dodatkowa wskazówka ekspercka na koniec artykułu.</p>
 </div>
