@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("robots.txt");
 
   // Ignoruj folder .history i pliki HTML w artykułach
   eleventyConfig.ignores.add(".history/**");
@@ -36,6 +37,20 @@ module.exports = function(eleventyConfig) {
     return new Date(dateObj).toLocaleDateString('en-US', options);
   });
 
+  // Dodaj filtr dla ISO date (dla sitemap i meta tags)
+  eleventyConfig.addFilter("dateToISO", (dateObj) => {
+    return new Date(dateObj).toISOString();
+  });
+
+  // Reading time calculator
+  eleventyConfig.addFilter("readingTime", (text) => {
+    if (!text) return '1 min read';
+    const wordsPerMinute = 200;
+    const wordCount = text.split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min read`;
+  });
+
   // Dodaj filtr do skrócenia tekstu (excerpt)
   eleventyConfig.addFilter("excerpt", (text, limit = 150) => {
     if (!text) return '';
@@ -50,6 +65,12 @@ module.exports = function(eleventyConfig) {
       .replace(/^-+|-+$/g, '');
   });
 
+  // Strip HTML tags for plain text
+  eleventyConfig.addFilter("striptags", (text) => {
+    if (!text) return '';
+    return text.replace(/<[^>]*>/g, '');
+  });
+
   // Dodaj filtr do generowania JSON-LD dla BlogPosting Schema
   eleventyConfig.addFilter("blogPostingSchema", (page, siteUrl = "https://salesforcedecoded.com") => {
     if (!page || !page.url) {
@@ -62,7 +83,7 @@ module.exports = function(eleventyConfig) {
 
     const url = siteUrl + page.url;
     const data = page.data || {};
-    const imageUrl = data.image || `${siteUrl}/images/default-og.jpg`;
+    const imageUrl = data.image || `${siteUrl}/css/logo.png`;
     
     const schema = {
       "@context": "https://schema.org",
@@ -82,7 +103,7 @@ module.exports = function(eleventyConfig) {
         "name": "Salesforce de-coded",
         "logo": {
           "@type": "ImageObject",
-          "url": `${siteUrl}/images/logo.png`
+          "url": `${siteUrl}/css/logo.png`
         }
       },
       "mainEntityOfPage": {
@@ -105,7 +126,7 @@ module.exports = function(eleventyConfig) {
       "url": siteUrl,
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteUrl}/images/logo.png`,
+        "url": `${siteUrl}/css/logo.png`,
         "width": "600",
         "height": "60"
       },

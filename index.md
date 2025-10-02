@@ -35,6 +35,7 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
                             <div class="post-meta">
                                 <span class="post-category">{{ article.data.category or '📝 General' }}</span>
                                 <span class="post-date">{{ article.data.date | readableDate }}</span>
+                                <span class="post-reading-time">📖 {{ article.templateContent | striptags | readingTime }}</span>
                             </div>
                             <p class="post-excerpt">{{ article.data.excerpt or (article.templateContent | striptags | excerpt) }}</p>
                         </div>
