@@ -8,9 +8,12 @@ module.exports = function(eleventyConfig) {
   // WAŻNE: Kopiuj cały folder admin/ bez przetwarzania
   eleventyConfig.addPassthroughCopy("admin/**/*");
 
-  // Ignoruj folder .history i pliki HTML w artykułach
-  eleventyConfig.ignores.add(".history/**");
-  eleventyConfig.ignores.add("artykuly/*.html");
+ // Ignoruj folder .history i pliki HTML w artykułach
+eleventyConfig.ignores.add(".history/**");
+eleventyConfig.ignores.add("artykuly/*.html");
+
+// WAŻNE: Ignoruj admin/ jako template - tylko kopiuj
+eleventyConfig.ignores.add("admin/**");
 
   // Stwórz kolekcję artykułów (IGNORUJ PLIKI ZACZYNAJĄCE SIĘ OD _ lub __)
   eleventyConfig.addCollection("articles", function(collectionApi) {
