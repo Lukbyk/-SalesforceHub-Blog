@@ -1,4 +1,4 @@
-# PowerShell - utwórz vercel.json:
+# Utwórz vercel.json
 @"
 {
   "buildCommand": "npm run build",
