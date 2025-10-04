@@ -2,7 +2,7 @@
 title: "How to Effectively Manage Leads in Salesforce"
 layout: "article-layout.njk"
 date: 2024-12-28
-category: "📊 Lead Management"
+category: "🎯 Sales Optimization"
 excerpt: "Learn best practices for lead management that will help you increase conversion and better organize your sales process with practical tips for lead qualification and follow-up strategies."
 image: "/images/zarzadzanie-leadami.jpg"
 author: "Łukasz Byczkowski"

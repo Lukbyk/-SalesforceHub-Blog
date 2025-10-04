@@ -33,7 +33,7 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
                         <div class="post-content">
                             <h3 class="post-title">{{ article.data.title }}</h3>
                             <div class="post-meta">
-                                <span class="post-category">{{ article.data.category or '📝 General' }}</span>
+                                <span class="post-category category-{{ article.data.category | categorySlug }}">{{ article.data.category or 'General' }}</span>
                                 <span class="post-date">{{ article.data.date | readableDate }}</span>
                                 <span class="post-reading-time">📖 {{ article.templateContent | striptags | readingTime }}</span>
                             </div>

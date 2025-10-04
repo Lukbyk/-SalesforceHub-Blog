@@ -103,22 +103,23 @@
         </div>
         {%- endif -%}
         
-        <div class="article-layout">
-            <article class="article-content">
+        <div class="article-layout-single">
+            <article class="article-content-full">
                 <p class="post-meta" style="margin-bottom: 2rem; color: #6C757D; font-size: 0.9rem;">
                     📅 {{ date | readableDate }} • 📖 {{ content | striptags | readingTime }}
                 </p>
                 {{ content | safe }}
             </article>
             
-            <aside class="article-sidebar">
-                <h3>Related Articles</h3>
-                {%- if relatedArticles and relatedArticles.length > 0 -%}
-                <div class="related-articles">
+            {# Related Articles jako kafelki pod treścią #}
+            {%- if relatedArticles and relatedArticles.length > 0 -%}
+            <section class="related-section">
+                <h3 class="related-heading">Related Articles</h3>
+                <div class="related-articles-grid">
                     {%- for articleUrl in relatedArticles -%}
                         {%- for item in collections.articles -%}
                             {%- if item.url == articleUrl -%}
-                            <article class="related-card">
+                            <article class="related-card-grid">
                                 <a href="{{ item.url }}" class="related-link">
                                     <div class="related-image">
                                         <img src="{{ item.data.image }}" alt="{{ item.data.title }}">
@@ -136,8 +137,8 @@
                         {%- endfor -%}
                     {%- endfor -%}
                 </div>
-                {%- endif -%}
-            </aside>
+            </section>
+            {%- endif -%}
         </div>
     </div>
 </main>

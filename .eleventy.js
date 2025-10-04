@@ -51,6 +51,16 @@ module.exports = function(eleventyConfig) {
     return `${minutes} min read`;
   });
 
+  // Category slug for CSS classes
+  eleventyConfig.addFilter("categorySlug", (category) => {
+    if (!category) return '';
+    return category
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/&/g, 'and');
+  });
+
   // Dodaj filtr do skrócenia tekstu (excerpt)
   eleventyConfig.addFilter("excerpt", (text, limit = 150) => {
     if (!text) return '';
