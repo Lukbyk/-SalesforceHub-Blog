@@ -26,10 +26,11 @@ Understanding this comparison isn't just a nice-to-have. It transforms how you w
 ## What You'll Learn
 
 By the end of this article, you'll understand:
-- How Salesforce's data structure mirrors Excel's familiar layout
-- Why understanding this architecture makes you more effective at your job
-- The key differences that make Salesforce more powerful than spreadsheets
-- How to use this knowledge when building reports and describing requirements
+    - How Salesforce's data structure mirrors Excel's familiar layout
+    - Why understanding this architecture makes you more effective at your job
+    - The key differences that make Salesforce more powerful than spreadsheets
+    - How to use this knowledge when building reports and describing requirements
+  
 
 ## Understanding Salesforce Architecture
 

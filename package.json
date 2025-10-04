@@ -4,9 +4,10 @@
   "description": "A modern, responsive blog focused on Salesforce end-users including sales representatives, customer service agents, managers, product owners, business analysts, and marketing professionals.",
   "main": "script.js",
   "scripts": {
-  "start": "eleventy --serve",
-  "build": "eleventy"
-},
+    "start": "eleventy --serve",
+    "build": "tinacms build && eleventy",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\""
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

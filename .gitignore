@@ -5,3 +5,5 @@ _site
 node_modules
 # Local History (VS Code extension)
 .history
+node_modules
+.env
