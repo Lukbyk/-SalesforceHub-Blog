@@ -3,8 +3,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("robots.txt");
+  
+  // WAŻNE: Kopiuj cały folder admin/ bez przetwarzania
+  eleventyConfig.addPassthroughCopy("admin/**/*");
 
   // Ignoruj folder .history i pliki HTML w artykułach
   eleventyConfig.ignores.add(".history/**");
