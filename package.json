@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "tinacms build && eleventy",
+    "build": "eleventy",
     "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\""
   },
   "keywords": [],
