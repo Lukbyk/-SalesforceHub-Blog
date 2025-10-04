@@ -1,31 +1,26 @@
 module.exports = function(eleventyConfig) {
-  // Przekopiuj foldery css, js i images do folderu _site
+  // NAJPIERW: Passthrough copy
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("robots.txt");
   
-  // WAŻNE: Kopiuj cały folder admin/ bez przetwarzania
-  eleventyConfig.addPassthroughCopy("admin/**/*");
+  // Decap CMS - kopiuj admin/ RAW (object mapping ma najwyższy priorytet)
+  eleventyConfig.addPassthroughCopy({
+    "admin": "admin"
+  });
 
- // Ignoruj folder .history i pliki HTML w artykułach
-eleventyConfig.ignores.add(".history/**");
-eleventyConfig.ignores.add("artykuly/*.html");
-
-// WAŻNE: Ignoruj admin/ jako template - tylko kopiuj
-eleventyConfig.ignores.add("admin/**");
+  // POTEM: Ignores (NIE ignoruj admin/** - nie potrzebujemy tego!)
+  eleventyConfig.ignores.add(".history/**");
+  eleventyConfig.ignores.add("artykuly/*.html");
 
   // Stwórz kolekcję artykułów (IGNORUJ PLIKI ZACZYNAJĄCE SIĘ OD _ lub __)
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByGlob("artykuly/*.md")
       .filter(item => {
-        // Ignoruj drafty
         if (item.data.draft) return false;
-        
-        // Ignoruj pliki zaczynające się od _ lub __
         const filename = item.inputPath.split('/').pop();
         if (filename.startsWith('_')) return false;
-        
         return true;
       })
       .sort((a, b) => {
