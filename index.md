@@ -11,7 +11,10 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>Simplifying the Cloud for non-tech users</h1>
+            <h1>
+    Simplifying the Cloud
+    <span style="display: block;">for non-tech users</span>
+</h1>
             <p>Practical Salesforce tips without the technical jargon</p>
             <a href="{{ articles[0].url }}" class="cta-button">Read Latest Post</a>
         </div>
