@@ -1,19 +1,24 @@
 ---
-title: "Is Salesforce Just Excel on Steroids? Understanding Salesforce Architecture"
-layout: "article-layout.njk"
+title: Is Salesforce Just Excel on Steroids? Understanding Salesforce Architecture
+layout: article-layout.njk
 date: 2025-01-05
-category: "Getting Started"
-excerpt: "Learn how Salesforce is structured by comparing it to Excel. This mental model helps you work efficiently, create reports, and communicate with admins."
-image: "/images/salesforce-excel-comparison.jpg"
-author: "Łukasz Byczkowski"
-tags: ["getting-started", "data-model", "salesforce-basics", "excel-comparison"]
+category: Getting Started
+excerpt: Learn how Salesforce is structured by comparing it to Excel. This
+  mental model helps you work efficiently, create reports, and communicate with
+  admins.
+image: /images/salesforce-excel-comparison.jpg
+tags:
+  - getting-started
+  - data-model
+  - salesforce-basics
+  - excel-comparison
+author: Łukasz Byczkowski
 relatedArticles:
-  - "/artykuly/reporting-fundamentals/"
-  - "/artykuly/data-quality/"
-  - "/artykuly/sales-optimization/"
+  - /artykuly/reporting-fundamentals/
+  - /artykuly/data-quality/
+  - /artykuly/sales-optimization/
 ---
-
-## Understanding Salesforce Through a Familiar Lens
+## Understanding Salesforceeee Through a Familiar Lens
 
 If you've ever felt lost in Salesforce's terminology—objects, records, fields, relationships—you're not alone. But here's the secret: Salesforce is remarkably similar to something you probably use every day: Microsoft Excel.
 
@@ -30,7 +35,6 @@ By the end of this article, you'll understand:
     - Why understanding this architecture makes you more effective at your job
     - The key differences that make Salesforce more powerful than spreadsheets
     - How to use this knowledge when building reports and describing requirements
-  
 
 ## Understanding Salesforce Architecture
 
@@ -55,10 +59,10 @@ When something doesn't work as expected, understanding the structure helps you t
 
 Think of it this way:
 
-- **The Workbook = Your Salesforce Org**: Just like one Excel file contains everything, your Salesforce org is the container for all your business data.
-- **Tabs/Sheets = Objects**: Each tab in Excel is like a Salesforce object (Accounts, Contacts, Opportunities, Cases, etc.).
-- **Rows = Records**: Every row in your Excel sheet represents one item—in Salesforce, these are records (one customer, one deal, one support ticket).
-- **Columns = Fields**: Excel columns hold different types of information—Salesforce fields work exactly the same way.
+* **The Workbook = Your Salesforce Org**: Just like one Excel file contains everything, your Salesforce org is the container for all your business data.
+* **Tabs/Sheets = Objects**: Each tab in Excel is like a Salesforce object (Accounts, Contacts, Opportunities, Cases, etc.).
+* **Rows = Records**: Every row in your Excel sheet represents one item—in Salesforce, these are records (one customer, one deal, one support ticket).
+* **Columns = Fields**: Excel columns hold different types of information—Salesforce fields work exactly the same way.
 
 ## The Excel-to-Salesforce Translation
 
@@ -66,51 +70,52 @@ Let's make this concrete with a real example. Imagine you have an Excel file cal
 
 ### Tab 1: Account Information
 
-- **Columns**: Company Name, Industry, Annual Revenue, Phone Number, Website
-- **Each row** = one company you do business with
+* **Columns**: Company Name, Industry, Annual Revenue, Phone Number, Website
+* **Each row** = one company you do business with
 
 ![Accounts comparison between Salesforce and Excel](/images/accounts-sf-vs-excel.jpg)
 
 ### Tab 2: Contact Details
 
-- **Columns**: First Name, Last Name, Email, Phone, Job Title, Company (references Tab 1)
-- **Each row** = one person at those companies
+* **Columns**: First Name, Last Name, Email, Phone, Job Title, Company (references Tab 1)
+* **Each row** = one person at those companies
 
 ![Contacts comparison between Salesforce and Excel](/images/contacts-sf-vs-excel.jpg)
 
 ### Tab 3: Sales Opportunities
 
-- **Columns**: Deal Name, Amount, Close Date, Stage, Account (references Tab 1), Contact (references Tab 2)
-- **Each row** = one deal in your pipeline
+* **Columns**: Deal Name, Amount, Close Date, Stage, Account (references Tab 1), Contact (references Tab 2)
+* **Each row** = one deal in your pipeline
 
 ![Opportunities comparison between Salesforce and Excel](/images/opportunities-sf-vs-excel.jpg)
 
 In Salesforce, this exact structure exists:
-- Account object (your companies)
-- Contact object (people at those companies)
-- Opportunity object (your deals)
+
+* Account object (your companies)
+* Contact object (people at those companies)
+* Opportunity object (your deals)
 
 ## Data Types: Excel Formats = Salesforce Field Types
 
 Just like Excel cells can be formatted as different types, Salesforce fields have types:
 
-| Excel Format | Salesforce Field Type | Example |
-|-------------|----------------------|---------|
-| Text | Text / Text Area | Company Name |
-| Number | Number / Currency | Annual Revenue |
-| Date | Date / DateTime | Close Date |
-| Dropdown List | Picklist | Industry, Stage |
-| Checkbox | Checkbox | "Active Customer?" |
-| Formula | Formula Field | "Days Until Close" |
-| Hyperlink | URL | Website |
+| Excel Format  | Salesforce Field Type | Example            |
+| ------------- | --------------------- | ------------------ |
+| Text          | Text / Text Area      | Company Name       |
+| Number        | Number / Currency     | Annual Revenue     |
+| Date          | Date / DateTime       | Close Date         |
+| Dropdown List | Picklist              | Industry, Stage    |
+| Checkbox      | Checkbox              | "Active Customer?" |
+| Formula       | Formula Field         | "Days Until Close" |
+| Hyperlink     | URL                   | Website            |
 
 ## Relationships: VLOOKUP on Steroids
 
 Remember using VLOOKUP in Excel to connect data between tabs? Salesforce has built-in relationships that do this automatically and much more powerfully:
 
-- Contacts are linked to Accounts (which company they work for)
-- Opportunities are linked to Accounts (which company the deal is with)
-- When you view an Account, you automatically see all related Contacts and Opportunities—no VLOOKUP needed!
+* Contacts are linked to Accounts (which company they work for)
+* Opportunities are linked to Accounts (which company the deal is with)
+* When you view an Account, you automatically see all related Contacts and Opportunities—no VLOOKUP needed!
 
 ## Real-World Applications
 
@@ -121,11 +126,12 @@ Sarah's sales team kept a spreadsheet with tabs for customers, contacts, and dea
 
 **The Salesforce Way:**
 The same structure exists, but now:
-- Updates happen in real-time for everyone
-- Relationships are automatic (click a company, see all contacts and deals instantly)
-- Formulas calculate automatically (like "Days Since Last Contact")
-- Everyone sees the same, current information
-- Validation rules prevent incorrect data entry (like Excel's data validation, but more powerful)
+
+* Updates happen in real-time for everyone
+* Relationships are automatic (click a company, see all contacts and deals instantly)
+* Formulas calculate automatically (like "Days Since Last Contact")
+* Everyone sees the same, current information
+* Validation rules prevent incorrect data entry (like Excel's data validation, but more powerful)
 
 ### Scenario 2: Customer Service Team
 
@@ -133,10 +139,11 @@ The same structure exists, but now:
 The support team tracked customer issues in a spreadsheet. They had to manually link issues to the right customer and search through rows to find open tickets.
 
 **The Salesforce Way:**
-- Cases (support tickets) are automatically linked to the right Account and Contact
-- Automated workflows assign cases to the right agent (like Excel macros, but no coding needed)
-- Managers get real-time dashboards (like pivot tables, but live and interactive)
-- Escalation rules automatically flag urgent issues
+
+* Cases (support tickets) are automatically linked to the right Account and Contact
+* Automated workflows assign cases to the right agent (like Excel macros, but no coding needed)
+* Managers get real-time dashboards (like pivot tables, but live and interactive)
+* Escalation rules automatically flag urgent issues
 
 ## Advantages of Salesforce Over Excel
 
@@ -154,9 +161,9 @@ The support team tracked customer issues in a spreadsheet. They had to manually 
 
 ## Limitations to Consider
 
-- **Learning curve**: Excel is simpler to start with; Salesforce has more concepts to learn
-- **Customization requires permissions**: In Excel, anyone can add columns; in Salesforce, you need admin rights
-- **Cost**: Excel comes with Office; Salesforce requires per-user licensing
+* **Learning curve**: Excel is simpler to start with; Salesforce has more concepts to learn
+* **Customization requires permissions**: In Excel, anyone can add columns; in Salesforce, you need admin rights
+* **Cost**: Excel comes with Office; Salesforce requires per-user licensing
 
 ## Common Misconceptions
 
@@ -207,9 +214,11 @@ Now that you understand the Excel-to-Salesforce comparison, here's how to levera
 ## Learn More
 
 **Trailhead Modules:**
-- [Understand Data Models](https://trailhead.salesforce.com/content/learn/modules/data_modeling)
-- [Reports and Dashboards Quick Look](https://trailhead.salesforce.com/content/learn/modules/lex_implementation_reports_dashboards)
+
+* [Understand Data Models](https://trailhead.salesforce.com/content/learn/modules/data_modeling)
+* [Reports and Dashboards Quick Look](https://trailhead.salesforce.com/content/learn/modules/lex_implementation_reports_dashboards)
 
 **Salesforce Documentation:**
-- [Salesforce Objects Reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/)
-- [Field Types Overview](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm)
+
+* [Salesforce Objects Reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/)
+* [Field Types Overview](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm)
