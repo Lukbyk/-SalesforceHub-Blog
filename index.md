@@ -2,7 +2,7 @@
 title: "Home"
 layout: "base.njk"
 pagination:
-  data: collections.articles
+  data: sanity
   size: 9
   alias: articles
 permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
@@ -13,7 +13,7 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
         <div class="hero-content">
             <h1>Simplifying the Cloud for non-tech users</h1>
             <p>Practical Salesforce tips without the technical jargon</p>
-            <a href="{{ collections.articles[0].url }}" class="cta-button">Read Latest Post</a>
+            <a href="{{ articles[0].url }}" class="cta-button">Read Latest Post</a>
         </div>
     </div>
 </section>
@@ -28,16 +28,16 @@ permalink: "{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 
                 <article class="post-card">
                     <a href="{{ article.url }}" class="post-link">
                         <div class="post-image-wrapper">
-                            <img src="{{ article.data.image or 'https://via.placeholder.com/300x200/3498DB/ffffff?text=' + (article.data.title | slug | upper) }}" alt="{{ article.data.title }} article thumbnail" class="post-thumbnail">
+                            <img src="{{ article.thumbnailUrl or 'https://via.placeholder.com/300x200/3498DB/ffffff?text=' + (article.title | slug | upper) }}" alt="{{ article.title }} article thumbnail" class="post-thumbnail">
                         </div>
                         <div class="post-content">
-                            <h3 class="post-title">{{ article.data.title }}</h3>
+                            <h3 class="post-title">{{ article.title }}</h3>
                             <div class="post-meta">
-                                <span class="post-category category-{{ article.data.category | categorySlug }}">{{ article.data.category or 'General' }}</span>
-                                <span class="post-date">{{ article.data.date | readableDate }}</span>
-                                <span class="post-reading-time">📖 {{ article.templateContent | striptags | readingTime }}</span>
+                                <span class="post-category category-{{ article.category | categorySlug }}">{{ article.category or 'General' }}</span>
+                                <span class="post-date">{{ article.publishedAt | readableDate }}</span>
+                                <span class="post-reading-time">📖 {{ article.bodyHtml | striptags | readingTime }}</span>
                             </div>
-                            <p class="post-excerpt">{{ article.data.excerpt or (article.templateContent | striptags | excerpt) }}</p>
+                            <p class="post-excerpt">{{ article.excerpt }}</p>
                         </div>
                     </a>
                 </article>

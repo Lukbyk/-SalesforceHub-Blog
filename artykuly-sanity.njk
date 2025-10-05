@@ -1,0 +1,177 @@
+---
+pagination:
+  data: sanity
+  size: 1
+  alias: article
+permalink: "/artykuly/{{ article.slug.current }}/"
+eleventyComputed:
+  title: "{{ article.title }}"
+  excerpt: "{{ article.excerpt }}"
+  image: "{{ article.imageUrl }}"
+  date: "{{ article.publishedAt }}"
+  category: "{{ article.category }}"
+  author: "{{ article.author }}"
+  tags: "{{ article.tags }}"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {# SEO Meta Tags #}
+    <title>{{ article.title }} - Salesforce de-coded</title>
+    <meta name="description" content="{{ article.excerpt }}">
+    <meta name="author" content="{{ article.author or 'Łukasz Byczkowski' }}">
+    
+    {# Open Graph #}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ article.title }}">
+    <meta property="og:description" content="{{ article.excerpt }}">
+    <meta property="og:url" content="https://salesforcedecoded.com/artykuly/{{ article.slug.current }}/">
+    <meta property="og:image" content="https://salesforcedecoded.com{{ article.imageUrl }}">
+    
+    {# Twitter Card #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ article.title }}">
+    <meta name="twitter:description" content="{{ article.excerpt }}">
+    <meta name="twitter:image" content="https://salesforcedecoded.com{{ article.imageUrl }}">
+    
+    <link rel="canonical" href="https://salesforcedecoded.com/artykuly/{{ article.slug.current }}/">
+    <link rel="icon" type="image/png" href="/css/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="sticky-nav">
+    <div class="container">
+        <nav id="main-menu">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="/css/logo.png" alt="Salesforce de-coded" class="logo-image">
+                </a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dla-kogo/">Who is this for?</a></li>
+                    <li><a href="/o-nas/">About</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/lukasz-byczkowski/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        {# Breadcrumb #}
+        <nav aria-label="Breadcrumb" class="breadcrumb-top">
+            <a href="/">Home</a> / 
+            <span>{{ article.title }}</span>
+        </nav>
+        
+        {# Featured Image #}
+        {%- if article.imageUrl -%}
+        <div class="featured-image">
+            <img src="{{ article.imageUrl }}" alt="{{ article.title }}">
+        </div>
+        {%- endif -%}
+        
+        <div class="article-layout-single">
+            <article class="article-content-full">
+                <h1 class="post-title" style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ article.title }}</h1>
+                <p class="post-meta" style="margin-bottom: 2rem; color: #6C757D; font-size: 0.9rem;">
+                    📅 {{ article.publishedAt | readableDate }} • 
+                    📖 {{ article.bodyHtml | striptags | readingTime }} •
+                    🏷️ {{ article.category }}
+                </p>
+                
+                {# Article Body #}
+                <div class="article-body">
+                    {{ article.bodyHtml | safe }}
+                </div>
+                
+                {# Tags #}
+                {%- if article.tags and article.tags.length > 0 -%}
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #E0E0E0;">
+                    <strong>Tags:</strong>
+                    {%- for tag in article.tags -%}
+                    <span style="display: inline-block; background: #F8F9FA; padding: 0.3rem 0.8rem; margin: 0.2rem; border-radius: 5px; font-size: 0.85rem;">{{ tag }}</span>
+                    {%- endfor -%}
+                </div>
+                {%- endif -%}
+            </article>
+            
+            {# Related Articles #}
+            {%- if article.relatedArticles and article.relatedArticles.length > 0 -%}
+            <section class="related-section">
+                <h3 class="related-heading">Related Articles</h3>
+                <div class="related-articles-grid">
+                    {%- for related in article.relatedArticles -%}
+                    <article class="related-card-grid">
+                        <a href="/artykuly/{{ related.slug.current }}/" class="related-link">
+                            <div class="related-image">
+                                {%- if related.mainImage -%}
+                                <img src="{{ related.mainImage.asset.url }}?w=400" alt="{{ related.title }}">
+                                {%- endif -%}
+                            </div>
+                            <div class="related-content">
+                                <h4 class="related-title">{{ related.title }}</h4>
+                                <div class="related-meta">
+                                    <span class="related-category">{{ related.category or '📝 General' }}</span>
+                                    <span class="related-date">{{ related.publishedAt | readableDate }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    {%- endfor -%}
+                </div>
+            </section>
+            {%- endif -%}
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Salesforce de-coded</h4>
+                <p>Your practical guide to Salesforce success.</p>
+                <p style="font-size: 0.85rem; color: #95A5A6; margin-top: 1rem;">
+                    🍪 This website doesn't use cookies or tracking.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/">Latest Articles</a>
+                <a href="/dla-kogo/">Who is this for?</a>
+                <a href="/o-nas/">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="/privacy-policy/">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:contact@salesforcedecoded.com">contact@salesforcedecoded.com</a>
+            </div>
+        </div>
+        <p>&copy; 2025 Salesforce de-coded. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,31 +1,19 @@
 module.exports = function(eleventyConfig) {
-  // NAJPIERW: Passthrough copy
+  // Przekopiuj foldery css, js i images do folderu _site
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  
-  // Decap CMS - kopiuj admin/ RAW (object mapping ma najwyższy priorytet)
-  eleventyConfig.addPassthroughCopy({
-    "admin": "admin"
-  });
 
-  // POTEM: Ignores (NIE ignoruj admin/** - nie potrzebujemy tego!)
+  // Ignoruj folder .history i studio
   eleventyConfig.ignores.add(".history/**");
-  eleventyConfig.ignores.add("artykuly/*.html");
+  eleventyConfig.ignores.add("studio/**");
 
-  // Stwórz kolekcję artykułów (IGNORUJ PLIKI ZACZYNAJĄCE SIĘ OD _ lub __)
-  eleventyConfig.addCollection("articles", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("artykuly/*.md")
-      .filter(item => {
-        if (item.data.draft) return false;
-        const filename = item.inputPath.split('/').pop();
-        if (filename.startsWith('_')) return false;
-        return true;
-      })
-      .sort((a, b) => {
-        return new Date(b.data.date) - new Date(a.data.date);
-      });
+  // Stwórz kolekcję artykułów Z SANITY
+  eleventyConfig.addCollection("articles", async function(collectionApi) {
+    const sanityData = require('./_data/sanity.js');
+    const articles = await sanityData();
+    return articles;
   });
 
   // Dodaj filtr do formatowania daty

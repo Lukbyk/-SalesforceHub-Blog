@@ -1,0 +1,20 @@
+{
+  "name": "salesforce-decoded-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "sanity": "^3.22.0",
+    "@sanity/vision": "^3.22.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^3.22.0"
+  }
+}

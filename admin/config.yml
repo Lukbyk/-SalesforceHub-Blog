@@ -1,11 +1,13 @@
+# TRYB LOKALNY - zapisuje bezpośrednio do plików
+local_backend: true
+
+# Backend GitHub (tylko dla info, nieużywany lokalnie)
 backend:
   name: github
-  repo: Lukbyk/-SalesforceHub-Blog  # ZMIEŃ TO NA SWOJE REPO! np. username/salesforce-blog
+  repo: Lukbyk/-SalesforceHub-Blog
   branch: master
-  base_url: https://decap-oauth.vercel.app  # Publiczny OAuth proxy
-  auth_endpoint: auth
-  
-# Publikacja bez pull requestów - od razu do main
+
+# Publikacja - w trybie lokalnym to nie ma znaczenia
 publish_mode: editorial_workflow
 
 # Lokalizacja plików

@@ -1,5 +1,5 @@
 {
-  "name": "salesforceh de-coded",
+  "name": "salesforcede-coded",
   "version": "1.0.0",
   "description": "A modern, responsive blog focused on Salesforce end-users including sales representatives, customer service agents, managers, product owners, business analysts, and marketing professionals.",
   "main": "script.js",
@@ -12,6 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@sanity/cli": "^4.10.2"
+  },
+  "dependencies": {
+    "@portabletext/to-html": "^3.0.0",
+    "@sanity/client": "^7.12.0",
+    "@sanity/image-url": "^1.2.0"
   }
 }
