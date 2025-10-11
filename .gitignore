@@ -7,3 +7,9 @@ node_modules
 .history
 node_modules
 .env
+
+# Tina CMS (nie używamy)
+.tina/
+tina/
+content/
+pages/demo/

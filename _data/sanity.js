@@ -64,7 +64,12 @@ module.exports = async function() {
       title,
       slug,
       excerpt,
-      mainImage,
+      mainImage {
+        asset-> {
+          _id,
+          url
+        }
+      },
       "category": category->title,
       publishedAt
     }
@@ -79,6 +84,11 @@ module.exports = async function() {
       thumbnailUrl: article.mainImage ? urlFor(article.mainImage).width(400).url() : null,
       bodyHtml: article.body ? toHTML(article.body, {components: portableTextComponents}) : '',
       url: `/artykuly/${article.slug.current}/`,
+      // Mapujemy również powiązane artykuły, aby miały poprawne URL obrazów
+      relatedArticles: article.relatedArticles ? article.relatedArticles.map(related => ({
+        ...related,
+        imageUrl: related.mainImage ? urlFor(related.mainImage).width(400).url() : null
+      })) : []
     }));
   } catch (error) {
     console.error('Error fetching from Sanity:', error);
