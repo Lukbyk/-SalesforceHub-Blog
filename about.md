@@ -1,6 +1,8 @@
 ---
 title: "About"
 layout: "base.njk"
+excerpt: "Learn about Łukasz, a Salesforce Business Consultant with 15+ years of B2B sales experience, and discover why Salesforce Decoded was created to help non-technical users."
+
 ---
 
 <section class="hero">

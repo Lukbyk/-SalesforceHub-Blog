@@ -95,14 +95,18 @@
             <a href="/">Home</a> / 
             <span>{{ title }}</span>
         </nav>
-        
-        {# Featured Image #}
-        {%- if image -%}
-        <div class="featured-image">
-            <img src="{{ image }}" alt="{{ title }}">
-        </div>
-        {%- endif -%}
-        
+    </div>
+    
+    {# Featured Image POZA containerem #}
+   {%- if image -%}
+<div class="container">
+    <div class="featured-image">
+        <img src="{{ image }}" alt="{{ title }}">
+    </div>
+</div>
+{%- endif -%}
+    
+    <div class="container">
         <div class="article-layout-single">
             <article class="article-content-full">
                 <p class="post-meta" style="margin-bottom: 2rem; color: #6C757D; font-size: 0.9rem;">
@@ -111,7 +115,7 @@
                 {{ content | safe }}
             </article>
             
-            {# Related Articles jako kafelki pod treścią #}
+            {# Related Articles #}
             {%- if relatedArticles and relatedArticles.length > 0 -%}
             <section class="related-section">
                 <h3 class="related-heading">Related Articles</h3>

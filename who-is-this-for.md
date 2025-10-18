@@ -1,6 +1,7 @@
 ---
 title: "Who is this for?"
 layout: "base.njk"
+excerpt: "Salesforce Decoded is for business users—sales professionals, customer service teams, product owners, and business analysts—who need practical Salesforce guidance without technical jargon."
 permalink: "/who-is-this-for/index.html"
 
 ---

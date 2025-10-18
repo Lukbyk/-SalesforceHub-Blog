@@ -80,7 +80,7 @@ module.exports = async function() {
 
     return articles.map(article => ({
       ...article,
-      imageUrl: article.mainImage ? urlFor(article.mainImage).width(1200).url() : null,
+imageUrl: article.mainImage ? urlFor(article.mainImage).width(1200).fit('max').url() : null,
       thumbnailUrl: article.mainImage ? urlFor(article.mainImage).width(400).url() : null,
       bodyHtml: article.body ? toHTML(article.body, {components: portableTextComponents}) : '',
       url: `/artykuly/${article.slug.current}/`,
