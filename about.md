@@ -16,7 +16,7 @@ layout: "base.njk"
             <h2>Hi, I'm Lukas</h2>
             <p>I'm a Salesforce Business Consultant with over 15 years of experience in B2B sales and sales management.</p>
 
-            <p>My journey with Salesforce started when I was a Global Product Owner, leading an international Salesforce implementation. Later, I used Salesforce daily as a sales rep and then as a sales manager—experiencing the platform from both the user and leadership perspectives. This hands-on experience showed me what works in practice, what frustrates users, and where the real value lies.</p>
+            <p>My journey with Salesforce started when I was a Global Product Owner, participating in an international Salesforce implementation. Later, I used Salesforce daily as a sales rep and then as a sales manager—experiencing the platform from both the user and leadership perspectives. This hands-on experience showed me what works in practice, what frustrates users, and where the real value lies.</p>
 
             <p>Two years ago, I decided to pivot my career and became a Salesforce business consultant, helping organizations optimize their sales processes and get more value from their CRM.</p>
 
