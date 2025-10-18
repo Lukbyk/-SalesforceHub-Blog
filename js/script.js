@@ -60,3 +60,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// === IMAGE LIGHTBOX ===
+document.addEventListener('DOMContentLoaded', function() {
+    // Znajdź wszystkie obrazki w artykułach
+    const articleImages = document.querySelectorAll('.article-body img, .featured-image img');
+    
+    articleImages.forEach(img => {
+        // Dodaj cursor pointer
+        img.style.cursor = 'pointer';
+        
+        // Kliknięcie otwiera lightbox
+        img.addEventListener('click', function() {
+            openLightbox(this.src, this.alt);
+        });
+    });
+});
+
+function openLightbox(src, alt) {
+    // Utwórz overlay
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox-overlay';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <img src="${src}" alt="${alt}">
+            <div class="lightbox-caption">${alt || ''}</div>
+        </div>
+    `;
+    
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+    
+    // Zamknij na kliknięcie
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox || e.target.className === 'lightbox-close') {
+            closeLightbox(lightbox);
+        }
+    });
+    
+    // Zamknij na ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox(lightbox);
+        }
+    });
+}
+
+function closeLightbox(lightbox) {
+    document.body.style.overflow = '';
+    lightbox.remove();
+}
