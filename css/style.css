@@ -999,3 +999,28 @@ footer {
         padding-left: 1.5rem;
     }
 }
+/* Mobile - 768px */
+@media (max-width: 768px) {
+    /* ... (twoje istniejące reguły) ... */
+    
+    /* Więcej linii dla tytułów na mobile */
+    .post-title {
+        -webkit-line-clamp: 3;
+        min-height: 4.5rem;
+    }
+    
+    .related-title {
+        -webkit-line-clamp: 3;
+    }
+}
+
+/* Extra Small Mobile - 480px */
+@media (max-width: 480px) {
+    /* ... (twoje istniejące reguły) ... */
+    
+    /* Jeszcze więcej miejsca dla bardzo małych ekranów */
+    .post-title {
+        -webkit-line-clamp: 4;
+        min-height: auto;
+    }
+}
